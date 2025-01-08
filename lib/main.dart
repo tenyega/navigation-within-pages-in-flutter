@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'page2.dart';
+import 'liste.dart';
+import 'grille.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,6 +80,30 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
                 },
                 child: Text("Appeler page 2")),
+            ElevatedButton(
+                onPressed: () {
+                  var liste = Liste(
+                    color: Colors.amber,
+                  );
+                  Navigator.of(
+                          context) // this is to get access to the page List
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return liste;
+                  }));
+                },
+                child: Text("Appeler liste")),
+            ElevatedButton(
+                onPressed: () {
+                  var grille = Grille(
+                    color: Colors.amber,
+                  );
+                  Navigator.of(
+                          context) // this is to get access to the page grille
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return grille;
+                  }));
+                },
+                child: Text("Appeler Grille")),
           ],
         ),
       ),
